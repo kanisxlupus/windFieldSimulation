@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{69ce3615-2996-46cf-949c-03d8375ebfd3}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{49f7c192-dae1-491a-8eb4-f6de64b6da1e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c0ee3905-0329-49ae-8869-26239be0637c}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{506f46fc-c748-4673-a2d0-756b6132f3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{336f34b5-2e96-4f65-af32-983901c82e0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\GLIB Files">
+      <UniqueIdentifier>{7bd8a62c-ed87-464c-b4fa-c1c15a620605}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="freeglut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="freeglut_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="freeglut_std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glew.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glslprogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keytime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="displayNoise.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="displayNoise.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="arrow.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="arrow.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="voxelOutline.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="voxelOutline.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="particles.comp">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="particles.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="particles.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

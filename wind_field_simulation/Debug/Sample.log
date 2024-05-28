@@ -1,0 +1,13 @@
+﻿  sample.cpp
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(200,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(202,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(204,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(206,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(330,14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(498,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(500,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(502,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(504,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\sample.cpp(1014,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+sample.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  Sample.vcxproj -> D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\Debug\Sample.exe

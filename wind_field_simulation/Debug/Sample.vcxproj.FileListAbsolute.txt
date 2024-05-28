@@ -1,0 +1,8 @@
+Y:\CS550\Sample2022\Debug\Sample.exe
+Y:\CS550\ShaderDemoEllipse2022\Debug\Sample.exe
+Y:\CS557\ShaderSample2022\Debug\Sample.exe
+D:\Sam\Documents\School\Winter 2024\cs457\ShaderSampleWindows\Debug\Sample.exe
+D:\Sam\Documents\School\Winter 2024\FoliageRendering\FoliageRendering\Debug\Sample.exe
+D:\Sam\Documents\School\Winter 2024\Sample Program With GLUI\Debug\Sample.exe
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project\Debug\Sample.exe
+D:\Sam\Documents\School\Winter 2024\cs457\Final Project\final_project_w_cs\Debug\Sample.exe

@@ -1,0 +1,94 @@
+#version 430 compatibility
+
+#extension GL_ARB_compute_shader : enable
+#extension GL_ARB_shader_storage_buffer_object : enable
+
+layout(std140, binding=4) buffer Pos
+{
+	vec4 Positions[];
+};
+
+layout(std140, binding=5) buffer Orig
+{
+	vec4 Origins[];
+};
+
+
+layout(local_size_x = 128, local_size_y = 1, local_size_z = 1) in;
+
+uniform sampler3D Noise3;
+uniform float uVolumeDiam;
+uniform int uVolumeOffset;
+uniform float uNumVoxels;
+uniform float uNoiseContrast;
+uniform float uTime;
+uniform float uSpeed;
+
+vec4 getNoiseValue(vec3 objectPos)
+{
+	// get vertex position on a scale of 0 -> 1
+	vec3 scaledPos = objectPos;				// 0 + uVolumeOffset -> uVolumeDiam + uVolumeOffset
+	scaledPos -= float(uVolumeOffset);		// 0 -> uVolumeDiam;
+	scaledPos = scaledPos / uVolumeDiam;	// 0 -> 1;
+
+	// Find voxel that the current fragment is part of
+	float voxelDiam = 1. / uNumVoxels;
+	float voxelRad = voxelDiam / 2.;
+
+	int numInX = int(scaledPos.x / voxelDiam);
+	int numInY = int(scaledPos.y / voxelDiam);
+	int numInZ = int(scaledPos.z / voxelDiam);
+
+	float xCenter = float(numInX) * voxelDiam + voxelRad;
+	float yCenter = float(numInY) * voxelDiam + voxelRad;
+	float zCenter = float(numInZ) * voxelDiam + voxelRad;
+
+	// Get noise value of that voxel
+	vec3 noiseCoords = vec3(xCenter, yCenter, zCenter);
+	noiseCoords = normalize(noiseCoords);
+
+	vec4 noiseValue = texture(Noise3, noiseCoords);
+
+	// increase contrast on noise value
+	vec3 inValue = noiseValue.xyz;
+	vec3 remove = vec3(0.5, 0.5, 0.5);
+
+	return noiseValue = vec4(mix(remove, inValue, uNoiseContrast), 1.);
+}
+
+bool isOutOfBounds(vec3 objectPos)
+{
+	bool oob = false;
+	if(any(lessThan(objectPos, vec3(float(uVolumeOffset)))))
+	{
+		oob = true;
+	}
+
+	if(any(greaterThan(objectPos, vec3(uVolumeDiam + float(uVolumeOffset)))))
+	{
+		oob = true;
+	}
+
+	return oob;
+}
+
+void main()
+{
+	uint gid = gl_GlobalInvocationID.x;
+
+	vec3 pos = Positions[gid].xyz;// + uVolumeOffset;
+
+	vec3 noiseValue = getNoiseValue(pos).xyz;
+
+	float speed = 0.001;
+
+	pos += noiseValue * uSpeed;
+
+	if (isOutOfBounds(pos))
+	{
+		pos = Origins[gid].xyz;// + uVolumeOffset;
+	}
+
+	Positions[gid].xyz = pos;
+
+}
